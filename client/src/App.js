@@ -1,8 +1,8 @@
 import React from "react";
-import CodeInput from "./components/CodeInput";
+import RoutesFile from "./Routes/RoutesFile";
 
 const App = () => {
-  return <CodeInput />;
+  return <RoutesFile />;
 };
 
 export default App;

@@ -1,6 +1,5 @@
 exports.otpVerification = async (req, res) => {
   const otpValues = req.body;
-  console.log(otpValues);
   var key,
     count = 0;
   for (key in otpValues) {

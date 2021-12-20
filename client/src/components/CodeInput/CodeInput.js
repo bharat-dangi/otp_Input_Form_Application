@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./codeInput.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CodeInput = () => {
+  const navigate = useNavigate();
   const [otpValues, setOtpValues] = useState({
     otp1: "",
     otp2: "",
@@ -12,7 +14,6 @@ const CodeInput = () => {
     otp6: "",
   });
   const [error, setError] = useState(false);
-  const [success, setSuccess] = useState(false);
 
   const { otp1, otp2, otp3, otp4, otp5, otp6 } = otpValues;
 
@@ -33,12 +34,9 @@ const CodeInput = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(
-        "http://localhost:8000/api/otp/verification",
-        otpValues
-      );
+      await axios.post("http://localhost:8000/api/otp/verification", otpValues);
       setError(false);
-      setSuccess(true);
+      navigate("/success");
       setOtpValues({
         ...otpValues,
         otp1: "",
@@ -50,7 +48,6 @@ const CodeInput = () => {
       });
     } catch (error) {
       setError(true);
-      setSuccess(false);
     }
   };
 
@@ -127,7 +124,6 @@ const CodeInput = () => {
         />
       </div>
       {error && <p className="errorMessage">Verification Error</p>}
-      {success && <p className="successMessage">Success</p>}
       <button
         className="submitButton"
         type="submit"
