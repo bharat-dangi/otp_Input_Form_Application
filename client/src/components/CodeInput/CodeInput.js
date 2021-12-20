@@ -34,7 +34,10 @@ const CodeInput = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/api/otp/verification", otpValues);
+      await axios.post(
+        "https://byls-api.herokuapp.com/api/otp/verification",
+        otpValues
+      );
       setError(false);
       navigate("/success");
       setOtpValues({

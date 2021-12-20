@@ -13,10 +13,14 @@ app.use(helmet());
 app.use(morgan("common"));
 app.use(cors());
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 //routes
 app.use("/api/otp", otpRoutes);
+
+app.get("/", (req, res) => {
+  res.send("WELCOME TO Byls API");
+});
 
 app.listen(PORT, () => {
   console.log(`BACKEND IS READY ON ${PORT} PORT`);
