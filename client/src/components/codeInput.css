@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.codeInputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.otpContainer {
+  margin-top: 10px;
+}
+
+.otpInput {
+  width: 40px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding-left: 2px;
+  font-size: 20px;
+}
+
+.submitButton {
+  margin-top: 10px;
+  background-color: #100249;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 900px;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  color: red;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.successMessage {
+  margin-top: 10px;
+  color: green;
+  font-size: 30px;
+  font-weight: 700;
+}
