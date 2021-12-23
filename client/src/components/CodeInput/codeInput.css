@@ -46,3 +46,8 @@
   font-size: 30px;
   font-weight: 700;
 }
+
+.highlightClass {
+  box-shadow: 0 0 5px red;
+  border: 2px solid red;
+}
